@@ -2,11 +2,19 @@
 
 export SPARK_MASTER_HOST=${SPARK_MASTER_HOST:-`hostname`}
 
-export SPARK_HOME=/spark
+
+
+export SPARK_HOME=/spark >> ~/.bashrc
+export PATH=$SPARK_HOME/bin:$PATH >> ~/.bashrc
 
 . "/spark/sbin/spark-config.sh"
 
 . "/spark/bin/load-spark-env.sh"
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk >> ~/.bashrc
+export PATH=$JAVA_HOME/bin:$PATH >> ~/.bashrc
+
+source ~/.bashrc
 
 mkdir -p $SPARK_MASTER_LOG
 
